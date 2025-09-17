@@ -1,0 +1,2 @@
+# No dependencies needed for this basic structure yet.
+# This file is a placeholder for future packages.
