@@ -1,75 +1,77 @@
-# Python Terminal Solitaire
+# เกมไพ่ Solitaire
 
-A classic Klondike Solitaire game playable entirely within your terminal. This project is built with Python and features a clean, color-coded text interface with card icons.
+เกมไพ่ Solitaire แบบคลาสสิก ที่สามารถเล่นได้ทั้งหมดบน Terminal
 
-## Features
+## คุณสมบัติ
 
--   **Classic Klondike Rules:** Implements the standard rules of Klondike Solitaire.
--   **Text-Based Interface:** Clean and organized display using icons (♠♥♦♣) and colors for red/black suits.
--   **Complete Card Movement:**
-    -   Move single cards (from Waste to Tableau/Foundation, Tableau to Foundation).
-    -   Move stacks of cards between Tableau piles.
--   **Core Game Mechanics:**
-    -   Draw from the Stock pile.
-    -   Automatically flips face-down cards in the Tableau.
-    -   Resets the Stock pile from the Waste pile when empty.
--   **Win Detection:** The game automatically detects when you have won and displays a victory message.
+-   **กฎคลาสสิก:** ใช้กฎของเกมแบบมาตรฐาน
+-      
+-   **การเคลื่อนย้ายไพ่ที่สมบูรณ์:**
+    -   ย้ายไพ่ทีละใบ (จาก Waste ไป Tableau/Foundation, จาก Tableau ไป Foundation)
+    -   ย้ายกลุ่มไพ่ระหว่างกอง Tableau
+    -   
+-   **กลไกหลักของเกม:**
+    -   จั่วไพ่จากกอง Stock
+    -   เปิดไพ่ที่คว่ำหน้าในกอง Tableau โดยอัตโนมัติ
+    -   นำไพ่จากกอง Waste กลับมาเติมที่ Stock 
+  
+-   **ตรวจจับชัยชนะ:** เกมจะตรวจจับโดยอัตโนมัติเมื่อคุณชนะ และแสดงข้อความแสดงความยินดี
 
-## Requirements
+## สิ่งที่ต้องมี
 
 -   Python 3.x
 
-## How to Run
+## วิธีการรันโปรแกรม
 
-1.  **Clone the repository:**
+1.  **โคลนโปรเจค:**
     ```sh
-    git clone <your-repository-url>
+    git clone https://github.com/TanZ7/python-solitaire.git
     cd python-solitaire
     ```
 
-2.  **(Optional but Recommended) Create and activate a virtual environment:**
-    -   On Windows:
+2.  **(ทางเลือก แนะนำให้ทำ) สร้างและเปิดใช้งาน virtual environment:**
+    -   สำหรับ Windows:
         ```sh
         python -m venv venv
         .\venv\Scripts\activate
         ```
-    -   On macOS/Linux:
+    -   สำหรับ macOS/Linux:
         ```sh
         python3 -m venv venv
         source venv/bin/activate
         ```
 
-3.  **Run the game:**
+3.  **รันเกม:**
     ```sh
     python -m src.main
     ```
 
-## How to Play
+## วิธีการเล่น
 
-The game is controlled by typing commands into the terminal.
+ควบคุมเกมโดยการพิมพ์คำสั่งใน Terminal
 
-### Pile Naming
+### ชื่อเรียกกองไพ่
 
--   **Tableau Piles:** `t1`, `t2`, `t3`, `t4`, `t5`, `t6`, `t7`
--   **Foundation Piles:** `f1`, `f2`, `f3`, `f4`
--   **Waste Pile:** `w` or `waste`
+-   **กอง Tableau:** `t1`, `t2`, `t3`, `t4`, `t5`, `t6`, `t7`
+-   **กอง Foundation:** `f1`, `f2`, `f3`, `f4`
+-   **กอง Waste:** `w` หรือ `waste`
 
-### Commands
+### คำสั่ง
 
--   **Draw a card:**
+-   **จั่วไพ่:**
     ```
     d
     ```
--   **Move a single card:**
-    -   Format: `move [from_pile] [to_pile]`
-    -   Example: `move w t5` (Move from Waste to Tableau 5)
-    -   Example: `move t1 f1` (Move from Tableau 1 to Foundation 1)
+-   **ย้ายไพ่ใบเดียว:**
+    -   รูปแบบ: `move [กองต้นทาง] [กองปลายทาง]`
+    -   ตัวอย่าง: `move w t5` (ย้ายจาก Waste ไป Tableau 5)
+    -   ตัวอย่าง: `move t1 f1` (ย้ายจาก Tableau 1 ไป Foundation 1)
 
--   **Move a stack of cards:**
-    -   Format: `move [from_pile] [num_cards] [to_pile]`
-    -   Example: `move t2 3 t6` (Move 3 cards from Tableau 2 to Tableau 6)
+-   **ย้ายไพ่เป็นกลุ่ม:**
+    -   รูปแบบ: `move [กองต้นทาง] [จำนวนไพ่] [กองปลายทาง]`
+    -   ตัวอย่าง: `move t2 3 t6` (ย้ายไพ่ 3 ใบบนสุดจาก Tableau 2 ไป Tableau 6)
 
--   **Quit the game:**
+-   **ออกจากเกม:**
     ```
     q
     ```
